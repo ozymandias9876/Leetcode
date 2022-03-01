@@ -1,18 +1,17 @@
 class Solution {
 public:
     int maximumWealth(vector<vector<int>>& accounts) {
-        int maxsum=0;
-        int sum=0;
-        for(auto x:accounts)
+        int maxm=0;
+        int curr=0;
+        for(auto i: accounts )
         {
-            for(auto y:x)
-            {
-                sum+=y;
-            }
-            maxsum=max(maxsum,sum);
-            sum=0;
-        }
-        return maxsum;
+            int sum=0;
             
+           for(auto x:i)
+              sum+=x;
+            curr=max(curr,sum);
+            maxm=max(curr,maxm);
+        }
+        return maxm;
     }
 };
